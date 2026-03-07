@@ -27,7 +27,7 @@ import matplotlib.pyplot as plt
 from transformers import AutoTokenizer
 from peft import LoraConfig, get_peft_model, TaskType, PeftModel
 from collections import namedtuple
-from .model import ValueModel, load_base_model
+from model import ValueModel, load_base_model
 
 
 class ValueModelDataset(Dataset):

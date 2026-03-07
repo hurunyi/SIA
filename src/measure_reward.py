@@ -19,7 +19,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from .utils import ConversationProcessor
+from utils import ConversationProcessor
 
 
 @dataclass
