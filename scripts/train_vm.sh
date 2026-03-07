@@ -4,15 +4,15 @@
 
 # 设置默认参数
 # DATA_FILE可以是单个文件或多个文件（用数组存储）
-DATA_FILE=("/mnt/ssd2/shiqian/open-source/SIA/assets/vm_data/wildguardmix-Qwen3-Skywork-Reward-V2-Llama-3.1-8B.json")
-BASE_MODEL_PATH="/mnt/ssd2/shiqian/models/Skywork-Reward-V2-Qwen3-4B"
-OUTPUT_DIR="/mnt/ssd2/shiqian/open-source/SIA/assets/vm_checkpoints/Skywork-Reward-V2-Qwen3-4B/wildguardmix"
+DATA_FILE=("/path/to/vm_data.json")
+BASE_MODEL_PATH="/path/to/Skywork-Reward-V2-Qwen3-4B"
+OUTPUT_DIR="/path/to/value_model_checkpoint"
 BATCH_SIZE=8
 GRADIENT_ACCUMULATION_STEPS=2
 LEARNING_RATE=1e-4
 NUM_EPOCHS=3
 MAX_LENGTH=1024
-DEVICE="cuda:2"
+DEVICE="cuda:0"
 PLOT_STEPS=10
 SAVE_INTERVAL_STEPS=5000
 

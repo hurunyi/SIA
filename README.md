@@ -50,7 +50,7 @@ bash scripts/generate.sh
 ```bash
 python3 generate.py \
     --llm /path/to/LLM \
-    --rm /path/to/base_reward_model \
+    --rm /path/to/value_model_backbone \
     --rm_lora /path/to/value_model_checkpoint \
     --max_new_token 128 \
     --topk 10 \
@@ -102,7 +102,7 @@ Or manually:
 ```bash
 python3 evaluate.py \
     --llm /path/to/LLM \
-    --rm /path/to/base_reward_model \
+    --rm /path/to/value_model_backbone \
     --rm_lora /path/to/value_model_checkpoint \
     --dataset /path/to/dataset \
     --run_num -1 \

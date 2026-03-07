@@ -1,11 +1,8 @@
-export CUDA_VISIBLE_DEVICES=3
-
-LLM_NAME="Qwen3-4B-Base"
-RM_NAME="Qwen3-4B-Base"
+export CUDA_VISIBLE_DEVICES=0
 
 python3 generate.py \
-    --llm="/mnt/ssd2/shiqian/models/${LLM_NAME}" \
-    --rm="/mnt/ssd2/shiqian/models/${RM_NAME}" \
+    --llm="/path/to/LLM" \
+    --rm="/path/to/value_model_backbone" \
     --max_new_token=128 \
-    --rm_lora="/mnt/ssd2/shiqian/research/SIA_assets/token_rm_models/${RM_NAME}/wildguardmix_UltraChat_ShareGPT_all-tokens" \
+    --rm_lora="/path/to/value_model_checkpoint" \
     --entropy_threshold=1.0
