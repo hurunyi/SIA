@@ -27,11 +27,11 @@ We provide our trained Value Model checkpoints for the following backbone models
 
 | Backbone | Link |
 |---|---|
-| Qwen3-0.6B | _coming soon_ |
-| Qwen3-1.7B | _coming soon_ |
-| Qwen3-4B | _coming soon_ |
-| Llama-3.2-1B | _coming soon_ |
-| Llama-3.2-3B | _coming soon_ |
+| Qwen3-0.6B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-0.6B-Base](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-0.6B-Base) |
+| Qwen3-1.7B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-1.7B-Base](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-1.7B-Base) |
+| Qwen3-4B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-4B-Base](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-4B-Base) |
+| Llama-3.2-1B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-1B](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-1B) |
+| Llama-3.2-3B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-3B](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-3B) |
 
 Each checkpoint consists of LoRA weights and a token reward head, stored alongside a `model_config.json` that specifies the base model path and LoRA hyperparameters.
 
