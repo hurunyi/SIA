@@ -89,13 +89,12 @@ class DatasetProcessor:
 class ModelExperimentRunner:
     """模型实验运行器"""
     
-    def __init__(self, llm_path: str, rm_path: str, vm_path: str, rm_lora_path: str, llm_dev: str, rm_dev: str):
+    def __init__(self, llm_path: str, rm_path: str, rm_lora_path: str, llm_dev: str, rm_dev: str):
         """初始化实验运行器"""
         torch_dtype = torch.float16
         self.search = SIA(
             llm_path=llm_path,
             rm_path=rm_path,
-            vm_path=vm_path,
             rm_lora_path=rm_lora_path,
             llm_dev=llm_dev,
             rm_dev=rm_dev,
@@ -152,7 +151,7 @@ class ModelExperimentRunner:
         }
         return run_prompt_results
 
-    def generate_save_directory(self, base_dir: str, model_name: str, rm_name: str, vm_name: str, rm_lora_name: str, dataset_name: str, 
+    def generate_save_directory(self, base_dir: str, model_name: str, rm_name: str, rm_lora_name: str, dataset_name: str, 
                               run_config: dict, add_sys_prompt: bool = False) -> str:
         """生成保存目录路径"""
 
@@ -205,7 +204,6 @@ def parse_arguments():
     parser.add_argument("--run_num", type=int, default=1000)
     parser.add_argument("--rm", type=str)
     parser.add_argument("--llm", type=str)
-    parser.add_argument("--vm", type=str, default=None)
     parser.add_argument("--rm_lora", type=str, default=None)
     parser.add_argument("--max_new_token", type=int, default=128)
     parser.add_argument("--llm_gpu", type=str, default="cuda")
@@ -244,7 +242,6 @@ def main():
     # 提取模型和数据集名称
     model_name = args.llm.split("/")[-1]
     rm_name = args.rm.split("/")[-1]
-    vm_name = "vm" if args.vm else None
     rm_lora_name = args.rm_lora.split("/")[-2] if args.rm_lora else None
     dataset_name = args.dataset.split("/")[-1]
     
@@ -349,7 +346,7 @@ def main():
     
     # 初始化模型实验运行器
     print(f"[INFO]: Loading models ({args.llm=}, {args.rm=})")
-    experiment_runner = ModelExperimentRunner(args.llm, args.rm, args.vm, args.rm_lora, args.llm_gpu, args.rm_gpu)
+    experiment_runner = ModelExperimentRunner(args.llm, args.rm, args.rm_lora, args.llm_gpu, args.rm_gpu)
     print(f"[INFO]: Done")
     
     # 运行每个配置
@@ -362,7 +359,7 @@ def main():
         base_dir = f"assets/generation_results/{model_name}/{dataset_name}"
         
         save_dir = experiment_runner.generate_save_directory(
-            base_dir, model_name, rm_name, vm_name, rm_lora_name, dataset_name, run_config, args.add_sys_prompt
+            base_dir, model_name, rm_name, rm_lora_name, dataset_name, run_config, args.add_sys_prompt
         )
         
         if not Path(save_dir).exists():

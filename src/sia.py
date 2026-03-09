@@ -14,10 +14,9 @@ from .utils import compute_weighted_attention_sum, ConversationProcessor
 
 
 class SIA:
-    def __init__(self, llm_path, rm_path, vm_path=None, rm_lora_path=None, llm_dev="cuda:0", rm_dev="cuda:1", torch_dtype=torch.float16):
+    def __init__(self, llm_path, rm_path, rm_lora_path=None, llm_dev="cuda:0", rm_dev="cuda:1", torch_dtype=torch.float16):
         self.llm_dev = llm_dev
         self.rm_dev = rm_dev
-        self.vm_dev = rm_dev
         self.torch_dtype = torch_dtype
         
         print(f"Loading LLM from {llm_path}...")
@@ -52,8 +51,6 @@ class SIA:
         self.llm_type = os.path.basename(llm_path)
         self.rm_type = os.path.basename(rm_path)
 
-        self.VM = None
-        
     def get_llm_input_ids(self, prompt: str) -> torch.Tensor:
         conversations = ConversationProcessor.parse_conversation_to_format(prompt, add_system_prompt=False)
         # 格式化对话
