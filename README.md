@@ -13,11 +13,27 @@ Official implementation of Inference-time Alignment via Sparse Junction Steering
 
 ## Model Download
 
+### 1. LLM
+
 Download the base or instruction-tuned LLMs you want to use for generation:
 
 - **Qwen3**: [https://huggingface.co/collections/Qwen/qwen3](https://huggingface.co/collections/Qwen/qwen3)
 - **Llama-3.1**: [https://huggingface.co/collections/meta-llama/llama-31](https://huggingface.co/collections/meta-llama/llama-31)
 - **Llama-3.2**: [https://huggingface.co/collections/meta-llama/llama-32](https://huggingface.co/collections/meta-llama/llama-32)
+
+### 2. Value Model
+
+We provide our trained Value Model checkpoints for the following backbone models:
+
+| Backbone | Link |
+|---|---|
+| Qwen3-0.6B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-0.6B-Base](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-0.6B-Base) |
+| Qwen3-1.7B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-1.7B-Base](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-1.7B-Base) |
+| Qwen3-4B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-4B-Base](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Qwen3-4B-Base) |
+| Llama-3.2-1B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-1B](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-1B) |
+| Llama-3.2-3B | [https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-3B](https://huggingface.co/Runyi-Hu/SIA/tree/main/VM-Skywork-Reward-V2-Llama-3.2-3B) |
+
+Each checkpoint consists of LoRA weights and a token reward head, stored alongside a `model_config.json` that specifies the base model path and LoRA hyperparameters.
 
 ---
 
