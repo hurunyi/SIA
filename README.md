@@ -1,5 +1,5 @@
 # Inference-time Alignment via Sparse Junction Steering
-Official implementation of Inference-time Alignment via Sparse Junction Steering.
+Official implementation of [Inference-time Alignment via Sparse Junction Steering](https://arxiv.org/abs/2602.21215).
 
 
 ## Table of Contents
